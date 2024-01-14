@@ -4,14 +4,11 @@ import { getRoom } from "@/libs/apis";
 import useSWR from "swr";
 import LoadingSpinner from "../../loading";
 import HotelPhotoGallery from "@/app/components/HotelPhotoGallery/HotelPhotoGallery";
-import { MdOutlineCleaningServices } from "react-icons/md";
-import { LiaFireExtinguisherSolid } from "react-icons/lia";
-import { AiOutlineMedicineBox } from "react-icons/ai";
-import { GiSmokeBomb } from "react-icons/gi";
 import BookRoomCta from "@/app/components/BookRoomCta/BookRoomCta";
 import { useState } from "react";
 import { toast } from "react-hot-toast";
 import YouTubeEmbed from "@/app/components/YoutubeVideoPlayer/YoutubeVideoPlayer";
+import Image from "next/image";
 
 const RoomDetails = (props: { params: { slug: string } }) => {
   const {
@@ -89,11 +86,19 @@ const RoomDetails = (props: { params: { slug: string } }) => {
       <div className="container mx-auto mt-20">
         <div className="md:grid md:grid-cols-12 gap-10 px-3">
           <div className="md:col-span-8 md:w-full">
-            {/* Hotel Information */}
             <h2 className="font-bold text-left text-lg md:text-2xl mb-4">
               {room.name}
             </h2>
-            <p>{room.description}</p>
+            <div className="my-11 w-full h-80 items-center">
+              <Image
+                alt="gallery"
+                className="img"
+                src="/images/hero-1.jpg"
+                width={200}
+                height={200}
+              />
+            </div>
+            {/* <YouTubeEmbed videoId="_dtel_5Mt8o" /> */}
             <div className="my-11">
               <h2 className="font-bold text-3xl mb-2">The Problem!</h2>
               <p>{room.description}</p>
@@ -104,9 +109,17 @@ const RoomDetails = (props: { params: { slug: string } }) => {
               </h2>
               <p>{room.description}</p>
             </div>
-            <div className="my-11">
+            {/* <div className="my-11">
               <h2 className="font-bold text-3xl mb-2">Our Success Story</h2>
               <YouTubeEmbed videoId="_dtel_5Mt8o" />
+            </div> */}
+            <div className="my-11">
+              <h2 className="font-bold text-3xl mb-2">Our Success Story</h2>
+              <div className="grid grid-cols-3 gap-5">
+                <YouTubeEmbed videoId="LQhHyCHrgYQ" />
+                <YouTubeEmbed videoId="m2fMergvliY" />
+                <YouTubeEmbed videoId="MGhxgaKM07Y" />
+              </div>
             </div>
             <div className="shadow dark:shadow-white rounded-lg p-6">
               <div className="items-center mb-4">

@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@sanity/vision": "^3.23.4",
+    "@tailwindcss/aspect-ratio": "^0.4.2",
     "axios": "^1.6.5",
     "next": "14.0.4",
     "next-auth-sanity": "^1.5.3",
