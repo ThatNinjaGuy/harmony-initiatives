@@ -44,15 +44,15 @@ const FeaturedRoom: FC<Props> = (props) => {
         <div className="flex flex-col md:flex-row md:items-end justify-between mt-10">
           <div className="flex mb-3 md:mb-0">
             <div className="flex gap-3 flex-col items-center justify-center mr-4">
-              <p className="text-xs lg:text-xl text-center">Start From</p>
-              <p className="md:font-bold flex font-medium text-lg xl:text-5xl">
-                ₹ {featuredRoom.price}
+              <p className="text-xs lg:text-xl text-center">Donations</p>
+              <p className="sm:font-bold font-mediumflex font-medium text-lg xl:text-5xl">
+                ₹ {featuredRoom.price / 1000} Mn+
               </p>
             </div>
             <div className="flex gap-3 flex-col items-center justify-center ml-4">
-              <p className="text-xs lg:text-xl text-center">Discount</p>
-              <p className="md:font-bold flex font-medium text-lg xl:text-5xl">
-                {featuredRoom.discount}%
+              <p className="text-xs lg:text-xl text-center">Scholarships</p>
+              <p className="sm:font-bold flex font-medium text-lg xl:text-5xl">
+                {featuredRoom.discount}+
               </p>
             </div>
           </div>

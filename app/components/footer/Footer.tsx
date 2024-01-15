@@ -2,7 +2,11 @@
 
 import Link from "next/link";
 
-import { BsFillSendFill, BsTelephoneOutbound } from "react-icons/bs";
+import {
+  BsFillSendFill,
+  BsTelephoneOutbound,
+  BsFillHouseDoorFill,
+} from "react-icons/bs";
 import { BiMessageDetail } from "react-icons/bi";
 
 // Footer for every page
@@ -16,10 +20,17 @@ const Footer = () => {
         <h4 className="font-semibold text-[40px] py-6">Contact</h4>
         <div className="flex flex-wrap gap-16 items-center justify-between">
           <div className="flex-1">
-            <p>123 Road</p>
             <div className="flex items-center py-4">
+              <BsFillHouseDoorFill />
+              <div className="flex flex-col">
+                <p className="ml-2">Amanora Park Town</p>
+                <p className="ml-2">Hadapdar</p>
+                <p className="ml-2">Pune(MH), India</p>
+              </div>
+            </div>
+            <div className="flex items-center pb-4">
               <BsFillSendFill />
-              <p className="ml-2">@ThatNinjaGuySpeaks</p>
+              <p className="ml-2">@HarmonyInitiatives</p>
             </div>
             <div className="flex items-center">
               <BsTelephoneOutbound />
@@ -27,7 +38,7 @@ const Footer = () => {
             </div>
             <div className="flex items-center pt-4">
               <BiMessageDetail />
-              <p className="ml-2">ThatNinjaGuySpeaks</p>
+              <p className="ml-2">@HarmonyInitiatives</p>
             </div>
           </div>
           <div className="flex-1 md:text-right">
@@ -38,10 +49,10 @@ const Footer = () => {
             <p>Customer Assistance</p>
           </div>
           <div className="flex-1 md:text-right">
-            <p className="pb-4">Dining Experience</p>
-            <p className="pb-4">Wellness</p>
-            <p className="pb-4">Fitness</p>
-            <p className="pb-4">Sports</p>
+            <p className="pb-4">What we Guarantee?</p>
+            <p className="pb-4">Upcoming Programs</p>
+            <p className="pb-4">Blogs</p>
+            <p className="pb-4">Join Us</p>
             <p>Events</p>
           </div>
         </div>

@@ -58,110 +58,59 @@ const BookRoomCta: FC<Props> = (props) => {
   return (
     <div className="px-7 py-6">
       <h3>
-        <span
-          className={`${
-            discount ? "text-gray-400 line-through" : ""
-          } font-bold text-xl`}
-        >
-          ₹ {price}{" "}
-        </span>
-        {discount ? (
-          <span className="font-bold text-xl">
-            | Discount {discount}%. Now{" "}
-            <span className="text-tertiary-dark">₹ {discountPrice}</span>
-          </span>
-        ) : (
-          ""
-        )}
+        <span className="font-bold text-xl text-tertiary-dark ">Donate</span>
       </h3>
       <div className="w-full border-b-2 border-b-secondary my-2" />
-      <h4>{specialNote}</h4>
-      <div className="w-full my-3" />
-
-      <div className="flex">
-        <div className="w-1/2 pr-2">
-          <label
-            htmlFor="check-in-date"
-            className="block text-sm font-medium text-gray-900 dark:text-gray-400"
-          >
-            Check In Date
-          </label>
-          <DatePicker
-            selected={checkInDate}
-            onChange={(date) => setCheckInDate(date)}
-            dateFormat="dd/MM/yyyy"
-            minDate={new Date()}
-            id="check-in-date"
-            className="w-full border text-black border-gray-300 rounded-lg p-2.5 focus:ring-primary focus:border-primary-600"
-          />
-        </div>
-        <div className="w-1/2 pr-2">
-          <label
-            htmlFor="check-out-date"
-            className="block text-sm font-medium text-gray-900 dark:text-gray-400"
-          >
-            Check Out Date
-          </label>
-          <DatePicker
-            selected={checkOutDate}
-            onChange={(date) => setCheckOutDate(date)}
-            dateFormat="dd/MM/yyyy"
-            disabled={!checkInDate}
-            minDate={calculateMinimumCheckoutDate()}
-            id="check-out-date"
-            className="w-full border text-black border-gray-300 rounded-lg p-2.5 focus:ring-primary focus:border-primary-600"
-          />
-        </div>
-      </div>
-      <div className="flex mt-4">
-        <div className="w-1/2 pr-2">
-          <label
-            htmlFor="adults"
-            className="block text-sm font-medium text-gray-900 dark:text-gray-400"
-          >
-            Adults
-          </label>
+      <div className="pt-2" />
+      <h4 className=" text-gray-900 dark:text-gray-400">
+        Join us in making a lasting impact on the world!
+      </h4>
+      <h4 className="">
+        Your donation, big or small, fuels change. Corporates, embrace your CSR
+        responsibility – partner with us to create a brighter future.
+      </h4>
+      <div className="pt-2" />
+      <h4 className=" text-gray-900 dark:text-gray-400">
+        Every contribution counts towards a better tomorrow.
+      </h4>
+      <div className="w-full my-6" />
+      <div className="w-full pr-2 mb-2">
+        <label
+          htmlFor="adults"
+          className="block text-sm font-medium text-gray-900 dark:text-gray-400"
+        >
+          Donate
+        </label>
+        <div className="flex flex-cols gap-10 sm:flex-row">
           <input
             type="number"
             id="adults"
-            value={adults}
+            // value={adults}
             onChange={(e) => setAdults(+e.target.value)}
-            min={minAdults}
-            max={maxAdults}
-            className="w-full border border-gray-300 rounded-lg p-2.5 "
+            // min={minAdults}
+            // max={maxAdults}
+            placeholder="₹ 9999"
+            className="w-3/5 sm:w-full border border-gray-300 rounded-lg p-2.5 text-gray-900 dark:text-gray-400"
           />
-        </div>
-        <div className="w-1/2 pr-2">
-          <label
-            htmlFor="children"
-            className="block text-sm font-medium text-gray-900 dark:text-gray-400"
+          <button
+            onClick={handleBookNowClick}
+            className="w-2/5 sm:w-full p-2 bg-tertiary-dark rounded-md disabled:bg-gray-500 disabled:cursor-not-allowed"
           >
-            Children
-          </label>
-          <input
-            type="number"
-            id="children"
-            value={childrenNum}
-            onChange={(e) => setChildrenNum(+e.target.value)}
-            min={minChildren}
-            max={maxChildren}
-            className="w-full border border-gray-300 rounded-lg p-2.5"
-          />
+            {isBooked ? "Donate More" : "PLEDGE"}
+          </button>
         </div>
       </div>
-      {calculateNumberOFDays() > 0 ? (
-        <p className="mt-3">
-          Total Price: ${calculateNumberOFDays() * discountPrice}{" "}
-        </p>
-      ) : (
-        <></>
-      )}
-      <button
-        onClick={handleBookNowClick}
-        className="btn-primary w-full mt-6 disabled:bg-gray-500 disabled:cursor-not-allowed"
-      >
-        {isBooked ? "Booked" : "Book Now!"}
-      </button>
+      <div>
+        <h3 className="mt-4 mb-2 text-tertiary-dark font-semibold">
+          Corporates! Want to understand how you can truly make an impact?
+        </h3>
+        <button
+          onClick={handleBookNowClick}
+          className="btn-primary w-full disabled:bg-gray-500 disabled:cursor-not-allowed"
+        >
+          {isBooked ? "Booked" : "Talk to us!"}
+        </button>
+      </div>
     </div>
   );
 };

@@ -115,7 +115,8 @@ const RoomDetails = (props: { params: { slug: string } }) => {
             </div> */}
             <div className="my-11">
               <h2 className="font-bold text-3xl mb-2">Our Success Story</h2>
-              <div className="grid grid-cols-3 gap-5">
+              <div className="grid grid-cols-3 gap-5 sm:grid-row">
+                {/* <div className="grid grid-cols-3 gap-5 md:flex md:flex-row"> */}
                 <YouTubeEmbed videoId="LQhHyCHrgYQ" />
                 <YouTubeEmbed videoId="m2fMergvliY" />
                 <YouTubeEmbed videoId="MGhxgaKM07Y" />
